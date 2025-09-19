@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Estudios - Inicio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Baloo+2&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>📚 Bienvenidos a la Aventura del Saber 🎉</h1>
+    <span id="usuarioInfo"></span>
+  </header>
+
+  <main>
+    <!-- Formulario de registro -->
+    <section id="registro">
+      <h2>🚀 Crea tu cuenta</h2>
+      <form id="formRegistro" class="formulario">
+        <label for="nombre">👦 Nombre:</label>
+        <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
+
+        <label for="email">📧 Correo:</label>
+        <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+
+        <label for="password">🔑 Contraseña:</label>
+        <input type="password" id="password" placeholder="Escribe tu contraseña" required>
+
+        <button type="submit" class="btn">🎉 Registrarse</button>
+      </form>
+      <p>¿Ya tienes cuenta? 👉 <a href="#" onclick="mostrarLogin()">Inicia sesión</a></p>
+    </section>
+
+    <!-- Formulario de login -->
+    <section id="login" style="display:none;">
+      <h2>🔓 Iniciar Sesión</h2>
+      <form id="formLogin" class="formulario">
+        <label for="emailLogin">📧 Correo:</label>
+        <input type="email" id="emailLogin" placeholder="Tu correo" required>
+
+        <label for="passwordLogin">🔑 Contraseña:</label>
+        <input type="password" id="passwordLogin" placeholder="Tu contraseña" required>
+
+        <button type="submit" class="btn">🚪 Entrar</button>
+      </form>
+      <p>¿No tienes cuenta? 👉 <a href="#" onclick="mostrarRegistro()">Regístrate</a></p>
+    </section>
+
+    <!-- Bienvenida -->
+    <section id="bienvenida" style="display:none;">
+      <h2>🎊 ¡Hola <span id="usuario"></span>!</h2>
+      <p>Prepárate para aprender y divertirte con tus materias favoritas 🤓✨</p>
+      <button onclick="cerrarSesion()" class="btn btn-salir">👋 Cerrar sesión</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Aventura del Saber 🚀</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
+    }
+  </script>
+</body>
+</html>

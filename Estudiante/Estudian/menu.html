@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Principal</title>
+  <link rel="stylesheet" href="menu.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>🎓 Menú Principal</h1>
+    <button id="cerrarSesion">🚪 Cerrar sesión</button>
+  </header>
+
+  <main>
+    <h2>Elige tu materia favorita 📚</h2>
+    <div class="materias">
+      <a class="materia matematicas" href="Matematicas/matematicas.html">📘 Matemáticas</a>
+      <a class="materia historia" href="Historia/historia.html">🌍 Historia</a>
+      <a class="materia biologia" href="Biologia/biologia.html">🧬 Biología</a>
+      <a class="materia ingles" href="Ingles/ingles.html">🇬🇧 Inglés</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>🌟 ¡Aprender es divertido! 🌟</p>
+  </footer>
+
+  <script>
+    // Botón de cerrar sesión
+    document.getElementById("cerrarSesion").addEventListener("click", () => {
+      localStorage.removeItem("usuarioActivo");
+      window.location.href = "index.html"; // Redirige al login/registro
+    });
+  </script>
+</body>
+</html>
